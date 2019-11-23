@@ -1,3 +1,5 @@
+import os
+import shutil
 import numpy as np
 from pandas import read_csv
 from keras import Sequential
@@ -18,10 +20,19 @@ Y = to_categorical(Y)
 X_train, X_test, Y_train, Y_test = train_test_split(
     X,
     Y, 
-    test_size=0.20,
+    test_size=.2,
     random_state=42
 )
 
+X_train, X_val, Y_train, Y_val = train_test_split(
+    X_train,
+    Y_train,
+    test_size=.2,
+    random_state=42
+)
+
+if (not os.path.isdir("data/")):
+    os.mkdir("data")
 
 # NPZ file creation
 X_file = open("data/x_test.npz", "wb")
@@ -31,6 +42,10 @@ np.savez(X_file, np.asarray(X_test))
 np.savez(Y_file, np.asarray(Y_test))
 X_file.close()
 Y_file.close()
+
+if (os.path.isfile("data/x_norm.npz")):
+    shutil.os.remove("data/x_norm.npz")
+shutil.copy("data/x_test.npz", "data/x_norm.npz")
 
 # encoder = LabelEncoder()
 # encoder.fit(Y)
@@ -51,7 +66,7 @@ model_returner = create_baseline()
 # kfold = StratifiedKFold(n_splits=50, shuffle=True)
 # results = cross_val_score(estimator, X, Y, cv=kfold)
 
-model_returner().fit(X_train, Y_train, batch_size=50, epochs=20, verbose=2, validation_data=(X_train, Y_train))
+model_returner().fit(X_train, Y_train, batch_size=50, epochs=20, verbose=2, validation_data=(X_val, Y_val))
 
 model_returner().save("iris-model.h5")
 
