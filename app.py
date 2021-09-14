@@ -2,6 +2,10 @@ import os
 import shutil
 import numpy as np
 from pandas import read_csv
+# from tensorflow.keras import Sequential
+# from tensorflow.keras.layers import Dense
+# from tensorflow.keras.utils import to_categorical
+# from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 from keras import Sequential
 from keras.layers import Dense
 from keras.utils import to_categorical
@@ -27,7 +31,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 X_train, X_val, Y_train, Y_val = train_test_split(
     X_train,
     Y_train,
-    test_size=.2,
+    test_size=.25,
     random_state=42
 )
 
@@ -47,32 +51,31 @@ if (os.path.isfile("data/x_norm.npz")):
     shutil.os.remove("data/x_norm.npz")
 shutil.copy("data/x_test.npz", "data/x_norm.npz")
 
-# encoder = LabelEncoder()
-# encoder.fit(Y)
-# encoded_Y = encoder.transform(Y)
-
-def create_baseline():
+def model_returner(topology=[]):
     model = Sequential()
-    # model.add(Dense(units=4, activation="relu", input_dim=4, kernel_initializer='normal'))
-    # model.add(Dense(units=4, activation="relu", kernel_initializer='normal'))
-    model.add(Dense(units=2, activation="softmax", input_dim=4, kernel_initializer='normal'))
+    input_dim = 4
+    for layer in topology:
+        if input_dim > 0:
+            model.add(Dense(units=layer, input_dim=input_dim, activation="relu"))
+            input_dim = 0 
+        else:
+            model.add(Dense(units=layer, activation="relu"))
+    if input_dim > 0:
+        model.add(Dense(units=2, activation="softmax", input_dim=input_dim, kernel_initializer='normal'))
+    else:
+        model.add(Dense(units=2, activation="softmax", kernel_initializer='normal'))
     model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
-    return lambda : model
+    return model
 
-model_returner = create_baseline()
+model = model_returner()
  
-# Test ve train sayılarını bul
-# estimator = KerasClassifier(build_fn=model_returner, epochs=50, batch_size=5, verbose=0)
-# kfold = StratifiedKFold(n_splits=50, shuffle=True)
-# results = cross_val_score(estimator, X, Y, cv=kfold)
+model.fit(X_train, Y_train, batch_size=50, epochs=20, verbose=2, validation_data=(X_val, Y_val))
 
-model_returner().fit(X_train, Y_train, batch_size=50, epochs=20, verbose=2, validation_data=(X_val, Y_val))
-
-model_returner().save("iris-model.h5")
+model.save("iris-model.h5")
 
 print(Y_test)
-print(model_returner().predict(X_test))
+print(model.predict(X_test))
 
-loss, acc = model_returner().evaluate(X_train, Y_train, verbose=0)
+loss, acc = model.evaluate(X_train, Y_train, verbose=0)
 print("loss: %.2f%%; acc: %.2f%%" % (loss*100, acc*100))
 

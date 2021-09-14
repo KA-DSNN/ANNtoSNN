@@ -1,0 +1,186 @@
+[[1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [0. 1.]]
+2019-11-25 21:04:35.191841: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-11-25 21:04:35.211968: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2601325000 Hz
+2019-11-25 21:04:35.212464: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5b226e0 executing computations on platform Host. Devices:
+2019-11-25 21:04:35.212502: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+Train on 60 samples, validate on 20 samples
+Epoch 1/20
+60/60 - 1s - loss: 0.6933 - accuracy: 0.4167 - val_loss: 0.6931 - val_accuracy: 0.6000
+Epoch 2/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.4333 - val_loss: 0.6933 - val_accuracy: 0.4000
+Epoch 3/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6934 - val_accuracy: 0.4000
+Epoch 4/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6936 - val_accuracy: 0.4000
+Epoch 5/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6937 - val_accuracy: 0.4000
+Epoch 6/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6938 - val_accuracy: 0.4000
+Epoch 7/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6939 - val_accuracy: 0.4000
+Epoch 8/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6940 - val_accuracy: 0.4000
+Epoch 9/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6940 - val_accuracy: 0.4000
+Epoch 10/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6941 - val_accuracy: 0.4000
+Epoch 11/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6942 - val_accuracy: 0.4000
+Epoch 12/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6942 - val_accuracy: 0.4000
+Epoch 13/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6942 - val_accuracy: 0.4000
+Epoch 14/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6943 - val_accuracy: 0.4000
+Epoch 15/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6944 - val_accuracy: 0.4000
+Epoch 16/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6945 - val_accuracy: 0.4000
+Epoch 17/20
+60/60 - 0s - loss: 0.6931 - accuracy: 0.5000 - val_loss: 0.6947 - val_accuracy: 0.4000
+Epoch 18/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6948 - val_accuracy: 0.4000
+Epoch 19/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6950 - val_accuracy: 0.4000
+Epoch 20/20
+60/60 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6951 - val_accuracy: 0.4000
+[[0. 1.]
+ [0. 1.]
+ [0. 1.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [0. 1.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [0. 1.]
+ [1. 0.]
+ [0. 1.]
+ [1. 0.]
+ [0. 1.]
+ [0. 1.]
+ [1. 0.]
+ [1. 0.]]
+[[0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]
+ [0.50471467 0.49528533]]
+loss: 69.32%; acc: 50.00%
